@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { media } from '@/styles/theme'
 import Image from 'next/image'
+import Logo from '@/components/ui/Logo'
 
 const Wrapper = styled.footer`
-  background: ${({ theme }) => theme.colors.primaryDark};
+  background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.sm};
+  color: ${({ theme }) => theme.colors.primaryDark};
 
   ${media.desktop} {
     padding: ${({ theme }) => theme.spacing['2xl']} ${({ theme }) => theme.spacing.lg};
@@ -44,9 +46,10 @@ const Brand = styled.div`
 
 const BrandText = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.7);
+  color: ${({ theme }) => theme.colors.primaryDark};
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
   max-width: 280px;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 `
 
 const SocialLinks = styled.div`
@@ -95,29 +98,29 @@ const Column = styled.div`
 const ColumnTitle = styled.h3`
   font-size: ${({ theme }) => theme.fonts.sizes.base};
   font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primaryDark};
   margin-bottom: 4px;
 `
 
 const FooterLink = styled(Link)`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.7);
+  color: ${({ theme }) => theme.colors.primaryDark};
   text-decoration: none;
   transition: color 0.2s;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.primaryDark};
   }
 `
 
 const FooterExternalLink = styled.a`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.7);
+  color: ${({ theme }) => theme.colors.primaryDark};
   text-decoration: none;
   transition: color 0.2s;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.primaryDark};
   }
 `
 
@@ -137,7 +140,7 @@ const SocialLinkSmall = styled(SocialLink)`
 
 const Divider = styled.hr`
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   margin-bottom: ${({ theme }) => theme.spacing.lg};
 `
 
@@ -156,7 +159,7 @@ const Bottom = styled.div`
 
 const BottomText = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.xs};
-  color: rgba(255, 255, 255, 0.4);
+  color: ${({ theme }) => theme.colors.primaryDark};
 `
 
 export default function Footer() {
@@ -165,15 +168,7 @@ export default function Footer() {
       <Inner>
         <Top>
           <Brand>
-            <Link href="/" aria-label="Lacrei Saúde - página inicial">
-              <Image
-                src="/images/footer/logo.webp"
-                alt="Lacrei Saúde"
-                width={130}
-                height={38}
-                priority
-              />
-            </Link>
+            <Logo width={180} height={34} />
             <BrandText>
               Plataforma de saúde inclusiva, acolhedora e segura para toda a comunidade LGBTQIAPN+
               do Brasil.
