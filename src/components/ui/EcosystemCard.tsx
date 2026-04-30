@@ -30,15 +30,19 @@ const Content = styled.div`
   }
 `
 
-const Image = styled.div<{ $src: string }>`
+const Image = styled.div<{ $src: string; $position?: string }>`
   background-image: url('${({ $src }) => $src}');
   background-size: cover;
-  background-position: top;
+  background-position: center 10%;
   min-height: 160px;
 
   ${media.tablet} {
     min-height: unset;
     background-position: center;
+  }
+
+  ${media.desktopOnly} {
+    background-position: ${({ $position }) => $position ?? 'center'};
   }
 `
 
@@ -103,6 +107,7 @@ interface EcosystemCardProps {
   href: string
   imageSrc: string
   imageAlt?: string
+  imagePosition?: string
 }
 
 export default function EcosystemCard({
@@ -113,6 +118,7 @@ export default function EcosystemCard({
   href,
   imageSrc,
   imageAlt = '',
+  imagePosition = 'center',
 }: EcosystemCardProps) {
   return (
     <Card>
@@ -124,7 +130,7 @@ export default function EcosystemCard({
         </div>
         <CardLink href={href}>{linkLabel}</CardLink>
       </Content>
-      <Image $src={imageSrc} role="img" aria-label={imageAlt} />
+      <Image $src={imageSrc} $position={imagePosition} role="img" aria-label={imageAlt} />
     </Card>
   )
 }

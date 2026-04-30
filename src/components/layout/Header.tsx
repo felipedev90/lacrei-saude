@@ -131,7 +131,7 @@ export default function Header() {
   return (
     <Wrapper>
       <Inner>
-        <Logo width={130} height={38} />
+        <Logo width={150} height={38} />
 
         <HamburgerButton
           onClick={() => setMenuOpen((prev) => !prev)}

@@ -55,6 +55,9 @@ const Tags = styled.div`
 `
 
 const Tag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: ${({ theme }) => theme.fonts.sizes.xs};
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
   color: ${({ theme }) => theme.colors.white};
@@ -64,9 +67,32 @@ const Tag = styled.span`
 
   ${media.desktop} {
     font-size: ${({ theme }) => theme.fonts.sizes.sm};
-    color: ${({ theme }) => theme.colors.white};
     border-color: rgba(255, 255, 255, 0.4);
     padding: 6px 16px;
+  }
+`
+
+const TagDot = styled.span<{ $color: string }>`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: ${({ $color }) => $color};
+  flex-shrink: 0;
+`
+
+const BottomTags = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+
+  ${media.desktop} {
+    padding: 0;
+    gap: 12px;
+    margin-top: 40px;
   }
 `
 
@@ -233,6 +259,7 @@ export default function Ecosystem() {
             href="/buscar"
             imageSrc="/images/ecosystem/encontre.webp"
             imageAlt="Pessoa usando o app da Lacrei Saúde"
+            imagePosition=" 80%"
           />
 
           <EcosystemCard
@@ -242,6 +269,7 @@ export default function Ecosystem() {
             href="/agendar"
             imageSrc="/images/ecosystem/agende.webp"
             imageAlt="Profissionais de saúde da Lacrei"
+            imagePosition="15% "
           />
 
           <CardWide $src="/images/ecosystem/capacite.webp" aria-label="Capacite-se com a Lacrei">
@@ -274,6 +302,24 @@ export default function Ecosystem() {
             <CardLink href="/seguranca">Saiba mais</CardLink>
           </CardSmall>
         </Grid>
+        <BottomTags>
+          <Tag>
+            <TagDot $color="#FFF" />
+            APOIO
+          </Tag>
+          <Tag>
+            <TagDot $color="#FFF" />
+            SAÚDE +
+          </Tag>
+          <Tag>
+            <TagDot $color="#FFF" />
+            PRIDE HEALTH
+          </Tag>
+          <Tag>
+            <TagDot $color="#FFF" />
+            OPEN CARE
+          </Tag>
+        </BottomTags>
       </Inner>
     </Section>
   )
