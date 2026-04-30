@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -40,4 +39,4 @@ export const GlobalStyles = createGlobalStyle`
   ul, ol {
     list-style: none;
   }
-`;
+`
