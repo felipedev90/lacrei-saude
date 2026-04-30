@@ -62,3 +62,9 @@ export const theme = {
 } as const
 
 export type Theme = typeof theme
+
+export const media = {
+  tablet: `@media (min-width: 768px)`,
+  desktop: `@media (min-width: 1024px)`,
+  wide: `@media (min-width: 1280px)`,
+}
