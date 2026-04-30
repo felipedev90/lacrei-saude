@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { media } from '@/styles/theme'
 import EcosystemCard from '@/components/ui/EcosystemCard'
+import { BadgeCheck, Heart, Users, ShieldCheck } from 'lucide-react'
 
 const Section = styled.section`
   background: linear-gradient(
@@ -57,8 +58,8 @@ const Tags = styled.div`
 const Tag = styled.span`
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: ${({ theme }) => theme.fonts.sizes.xs};
+  gap: 6px;
+  font-size: ${({ theme }) => theme.fonts.sizes.sm};
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
   color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.white};
@@ -66,7 +67,7 @@ const Tag = styled.span`
   padding: 4px 12px;
 
   ${media.desktop} {
-    font-size: ${({ theme }) => theme.fonts.sizes.sm};
+    font-size: ${({ theme }) => theme.fonts.sizes.lg};
     border-color: rgba(255, 255, 255, 0.4);
     padding: 6px 16px;
   }
@@ -245,10 +246,22 @@ export default function Ecosystem() {
           Conheça o ecossistema de saúde inclusiva da Lacrei
         </SectionTitle>
         <Tags>
-          <Tag>• Profissionais verificados</Tag>
-          <Tag>• Atendimento ético</Tag>
-          <Tag>• Comunidade ativa</Tag>
-          <Tag>• Cuidado integral</Tag>
+          <Tag>
+            <BadgeCheck size={14} />
+            Profissionais verificados
+          </Tag>
+          <Tag>
+            <Heart size={14} />
+            Atendimento ético
+          </Tag>
+          <Tag>
+            <Users size={14} />
+            Comunidade ativa
+          </Tag>
+          <Tag>
+            <ShieldCheck size={14} />
+            Cuidado integral
+          </Tag>
         </Tags>
 
         <Grid>
@@ -304,19 +317,19 @@ export default function Ecosystem() {
         </Grid>
         <BottomTags>
           <Tag>
-            <TagDot $color="#FFF" />
+            <TagDot $color="#018762" />
             APOIO
           </Tag>
           <Tag>
-            <TagDot $color="#FFF" />
+            <TagDot $color="#018762" />
             SAÚDE +
           </Tag>
           <Tag>
-            <TagDot $color="#FFF" />
+            <TagDot $color="#018762" />
             PRIDE HEALTH
           </Tag>
           <Tag>
-            <TagDot $color="#FFF" />
+            <TagDot $color="#018762" />
             OPEN CARE
           </Tag>
         </BottomTags>

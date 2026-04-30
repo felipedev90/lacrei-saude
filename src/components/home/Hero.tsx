@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 const Section = styled.section`
   position: relative;
   width: 100%;
-  min-height: 420px;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   background-image: url('/images/hero/hero.webp');
@@ -16,11 +16,11 @@ const Section = styled.section`
   background-repeat: no-repeat;
 
   ${media.tablet} {
-    min-height: 520px;
+    min-height: 80vh;
   }
 
   ${media.desktop} {
-    min-height: 580px;
+    min-height: 100vh;
   }
 `
 
