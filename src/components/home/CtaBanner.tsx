@@ -7,27 +7,32 @@ import Button from '@/components/ui/Button'
 const Section = styled.section`
   position: relative;
   width: 100%;
-  min-height: 50vh;
+  min-height: 320px;
   display: flex;
-  align-items: center;
-  background-image: url('/images/hero/hero.webp');
+  align-items: flex-end;
+  background-image: url('/images/cta/cta-banner.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   ${media.tablet} {
-    min-height: 80vh;
+    min-height: 400px;
   }
 
   ${media.desktop} {
-    min-height: 100vh;
+    min-height: 480px;
   }
 `
 
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(1, 55, 37, 0.55);
+  background: linear-gradient(
+    to top,
+    rgba(1, 55, 37, 0.92) 0%,
+    rgba(1, 55, 37, 0.5) 50%,
+    rgba(1, 55, 37, 0.1) 100%
+  );
 `
 
 const Inner = styled.div`
@@ -36,64 +41,37 @@ const Inner = styled.div`
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 48px ${({ theme }) => theme.spacing.sm};
+  padding: 40px ${({ theme }) => theme.spacing.sm};
 
   ${media.tablet} {
-    padding: 64px ${({ theme }) => theme.spacing.lg};
+    padding: 48px ${({ theme }) => theme.spacing.lg};
   }
 
   ${media.desktop} {
-    padding: 80px ${({ theme }) => theme.spacing.lg};
+    padding: 64px ${({ theme }) => theme.spacing.lg};
   }
 `
 
-const Eyebrow = styled.span`
-  display: inline-block;
-  font-size: ${({ theme }) => theme.fonts.sizes.xs};
-  font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme }) => theme.colors.primaryLight};
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-
-  ${media.tablet} {
-    font-size: ${({ theme }) => theme.fonts.sizes.sm};
-    margin-bottom: 16px;
-  }
-`
-
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: ${({ theme }) => theme.fonts.sizes['2xl']};
   font-weight: ${({ theme }) => theme.fonts.weights.extrabold};
   color: ${({ theme }) => theme.colors.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.tight};
-  max-width: 640px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 
   ${media.tablet} {
-    font-size: ${({ theme }) => theme.fonts.sizes['3xl']};
-    margin-bottom: 20px;
-  }
-
-  ${media.desktop} {
     font-size: ${({ theme }) => theme.fonts.sizes['4xl']};
   }
 `
 
 const Subtitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.9);
-  line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
-  max-width: 520px;
-  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
 
   ${media.tablet} {
-    font-size: ${({ theme }) => theme.fonts.sizes.base};
-    margin-bottom: 36px;
-  }
-
-  ${media.desktop} {
-    font-size: ${({ theme }) => theme.fonts.sizes.lg};
+    font-size: ${({ theme }) => theme.fonts.sizes.xl};
+    margin-bottom: 32px;
   }
 `
 
@@ -108,17 +86,13 @@ const Actions = styled.div`
   }
 `
 
-export default function Hero() {
+export default function CtaBanner() {
   return (
-    <Section>
+    <Section aria-labelledby="cta-title">
       <Overlay aria-hidden="true" />
       <Inner>
-        <Eyebrow>Plataforma de saúde inclusiva</Eyebrow>
-        <Title>Saúde acolhedora, com você no centro.</Title>
-        <Subtitle>
-          Conectamos a comunidade LGBTQIAPN+ a profissionais de saúde capacitados, éticos e
-          respeitosos — em todo o Brasil.
-        </Subtitle>
+        <Title id="cta-title">Saúde inclusiva, em todo o Brasil.</Title>
+        <Subtitle>Pronte para um cuidado que respeita quem você é?</Subtitle>
         <Actions>
           <Button variant="primary" href="/cadastrar">
             Criar minha conta
