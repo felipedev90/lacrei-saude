@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import StyledComponentsRegistry from '@/lib/registry'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -17,7 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={nunito.variable}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

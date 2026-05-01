@@ -12,6 +12,7 @@ export const theme = {
     textMuted: '#888888',
     borderLight: '#E0F0EA',
     backgroundLight: '#F8FDFA',
+    highlight: '#ffb340',
   },
   fonts: {
     family: 'var(--font-nunito), system-ui, sans-serif',
