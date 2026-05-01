@@ -2,7 +2,6 @@
 
 import styled from 'styled-components'
 import { media } from '@/styles/theme'
-import Button from '@/components/ui/Button'
 
 const Section = styled.section`
   position: relative;
@@ -10,13 +9,13 @@ const Section = styled.section`
   min-height: 50vh;
   display: flex;
   align-items: center;
-  background-image: url('/images/hero/hero.webp');
+  background-image: url('/images/quem-somos/quem-somos-hero.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   ${media.tablet} {
-    min-height: 80vh;
+    min-height: 70vh;
   }
 
   ${media.desktop} {
@@ -47,18 +46,34 @@ const Inner = styled.div`
   }
 `
 
+const Tag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: ${({ theme }) => theme.fonts.sizes.sm};
+  font-weight: ${({ theme }) => theme.fonts.weights.semibold};
+  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: ${({ theme }) => theme.radii.full};
+  padding: 4px 12px;
+
+  ${media.desktop} {
+    font-size: ${({ theme }) => theme.fonts.sizes.lg};
+    border-color: ${({ theme }) => theme.colors.primaryDarker};
+    padding: 6px 16px;
+  }
+`
+
 const Eyebrow = styled.span`
   display: inline-block;
   font-size: ${({ theme }) => theme.fonts.sizes.xs};
-  font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme }) => theme.colors.primaryLight};
+  font-weight: ${({ theme }) => theme.fonts.weights.extrabold};
+  color: ${({ theme }) => theme.colors.primaryDark};
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 12px;
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes.sm};
-    margin-bottom: 16px;
   }
 `
 
@@ -68,7 +83,7 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.tight};
   max-width: 640px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes['3xl']};
@@ -97,15 +112,9 @@ const Subtitle = styled.p`
   }
 `
 
-const Actions = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.xs};
-
-  ${media.tablet} {
-    flex-direction: row;
-    gap: ${({ theme }) => theme.spacing.sm};
-  }
+const SubtitleHighlight = styled.span`
+  color: ${({ theme }) => theme.colors.primaryMid};
+  font-weight: ${({ theme }) => theme.fonts.weights.extrabold};
 `
 
 export default function Hero() {
@@ -113,20 +122,17 @@ export default function Hero() {
     <Section>
       <Overlay aria-hidden="true" />
       <Inner>
-        <Eyebrow>Plataforma de saúde inclusiva</Eyebrow>
-        <Title>Saúde acolhedora, com você no centro.</Title>
+        <Tag>
+          <Eyebrow>Quem somos</Eyebrow>
+        </Tag>
+        <Title>
+          Saúde feita <SubtitleHighlight>com</SubtitleHighlight> a comunidade, não{' '}
+          <SubtitleHighlight>para</SubtitleHighlight> a comunidade
+        </Title>
         <Subtitle>
-          Conectamos a comunidade LGBTQIAPN+ a profissionais de saúde capacitados, éticos e
-          respeitosos — em todo o Brasil.
+          Somos uma plataforma criada por pessoas LGBTQIAPN+ que acreditam que todo mundo merece
+          acessar saúde com respeito, dignidade e cuidado integral.
         </Subtitle>
-        <Actions>
-          <Button variant="primary" href="/cadastrar">
-            Criar minha conta
-          </Button>
-          <Button variant="outline-white" href="/quem-somos">
-            Conheça a Lacrei
-          </Button>
-        </Actions>
       </Inner>
     </Section>
   )

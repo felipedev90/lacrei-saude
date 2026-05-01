@@ -12,6 +12,7 @@ export const theme = {
     textMuted: '#888888',
     borderLight: '#E0F0EA',
     backgroundLight: '#F8FDFA',
+    highlight: '#ffb340',
   },
   fonts: {
     family: 'var(--font-nunito), system-ui, sans-serif',
@@ -62,3 +63,10 @@ export const theme = {
 } as const
 
 export type Theme = typeof theme
+
+export const media = {
+  tablet: '@media (min-width: 768px)',
+  desktop: '@media (min-width: 1024px)',
+  desktopOnly: '@media (min-width: 1024px) and (max-width: 1279px)',
+  wide: '@media (min-width: 1280px)',
+}
