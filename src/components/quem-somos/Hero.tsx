@@ -6,20 +6,16 @@ import { media } from '@/styles/theme'
 const Section = styled.section`
   position: relative;
   width: 100%;
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
-  background-image: url('/images/quem-somos/quem-somos-hero.webp');
+  background-image: url('/images/quem-somos/hero/quem-somos-hero.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   ${media.tablet} {
-    min-height: 70vh;
-  }
-
-  ${media.desktop} {
-    min-height: 100vh;
+    min-height: 55vh;
   }
 `
 
@@ -83,11 +79,11 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.tight};
   max-width: 640px;
-  margin: 16px 0;
+  margin: ${({ theme }) => theme.spacing.sm} 0;
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes['3xl']};
-    margin-bottom: 20px;
+    margin-bottom: ${({ theme }) => theme.spacing.md};
   }
 
   ${media.desktop} {
@@ -100,11 +96,11 @@ const Subtitle = styled.p`
   color: rgba(255, 255, 255, 0.9);
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
   max-width: 520px;
-  margin-bottom: 28px;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes.base};
-    margin-bottom: 36px;
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
   }
 
   ${media.desktop} {
