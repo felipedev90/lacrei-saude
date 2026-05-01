@@ -10,7 +10,7 @@ const baseStyles = css`
   font-size: ${({ theme }) => theme.fonts.sizes.base};
   font-weight: ${({ theme }) => theme.fonts.weights.bold};
   border-radius: ${({ theme }) => theme.radii.md};
-  padding: 10px 24px;
+  padding: 10px ${({ theme }) => theme.spacing.md};
   border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
