@@ -6,7 +6,7 @@ import { media } from '@/styles/theme'
 const Section = styled.section`
   position: relative;
   width: 100%;
-  min-height: 30vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   background-image: url('/images/quem-somos/quem-somos-hero.webp');
@@ -15,11 +15,11 @@ const Section = styled.section`
   background-repeat: no-repeat;
 
   ${media.tablet} {
-    min-height: 50vh;
+    min-height: 70vh;
   }
 
   ${media.desktop} {
-    min-height: 70vh;
+    min-height: 100vh;
   }
 `
 
