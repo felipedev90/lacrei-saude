@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type TagType = {
   icon: React.ReactNode
   text: string
@@ -9,4 +11,12 @@ export type CardType = {
   src: string
   alt: string
   tags?: TagType[]
+}
+
+export type BeliefCardType = {
+  id: string
+  title: string
+  description: string
+  icon: ReactNode
+  isFeatured?: boolean
 }
