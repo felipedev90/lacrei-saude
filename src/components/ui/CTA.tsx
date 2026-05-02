@@ -1,16 +1,19 @@
 'use client'
-
 import styled from 'styled-components'
 import { media } from '@/styles/theme'
 import Button from '@/components/ui/Button'
+import type { CtaBannerProps } from '@/types/ctaBanner'
 
-const Section = styled.section`
+const Section = styled.section<{ $bgImage?: string }>`
   position: relative;
   width: 100%;
   min-height: 320px;
   display: flex;
-  align-items: flex-end;
-  background-image: url('/images/cta/cta-banner.webp');
+  align-items: center;
+
+  background-color: ${({ theme }) => theme.colors.primaryDark};
+  ${({ $bgImage }) => $bgImage && `background-image: url('${$bgImage}');`}
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,20 +89,30 @@ const Actions = styled.div`
   }
 `
 
-export default function CtaBanner() {
+export default function CtaBanner({
+  title,
+  subtitle,
+  backgroundImage,
+  primaryButton,
+  secondaryButton,
+}: CtaBannerProps) {
   return (
-    <Section aria-labelledby="cta-title">
+    <Section $bgImage={backgroundImage} aria-labelledby="cta-title">
       <Overlay aria-hidden="true" />
       <Inner>
-        <Title id="cta-title">Saúde inclusiva, em todo o Brasil.</Title>
-        <Subtitle>Pronte para um cuidado que respeita quem você é?</Subtitle>
+        <Title id="cta-title">{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+
         <Actions>
-          <Button variant="primary" href="/cadastrar">
-            Criar minha conta
+          <Button variant="primary" href={primaryButton.href}>
+            {primaryButton.label}
           </Button>
-          <Button variant="outline-white" href="/quem-somos">
-            Conheça a Lacrei
-          </Button>
+
+          {secondaryButton && (
+            <Button variant="outline-white" href={secondaryButton.href}>
+              {secondaryButton.label}
+            </Button>
+          )}
         </Actions>
       </Inner>
     </Section>
