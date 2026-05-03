@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
-import { MapPin, Monitor, Star } from 'lucide-react'
+import { MapPin, Monitor, Star, Check } from 'lucide-react'
 
 import type { Professional } from '@/types/professional'
 import Button from '@/components/ui/Button'
@@ -63,6 +63,9 @@ const Badge = styled.span`
   border-radius: ${({ theme }) => theme.radii.full};
   padding: 2px 10px;
   align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `
 
 const Details = styled.div`
@@ -125,7 +128,9 @@ export default function ProfessionalCard({ professional }: ProfessionalCardProps
         </Info>
       </Header>
 
-      <Badge>{professional.badge}</Badge>
+      <Badge>
+        <Check size={16} /> {professional.badge}
+      </Badge>
 
       <Details>
         <DetailRow>

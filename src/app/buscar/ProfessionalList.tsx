@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { media } from '@/styles/theme'
 import type { Professional } from '@/types/professional'
 import ProfessionalCard from '@/components/ui/ProfessionalCard'
+import Button from '@/components/ui/Button'
 
 const Wrapper = styled.div`
   max-width: 1280px;
@@ -50,6 +51,10 @@ const Grid = styled.div`
   }
 `
 
+const BackButton = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`
+
 interface ProfessionalListProps {
   professionals: Professional[]
 }
@@ -57,6 +62,11 @@ interface ProfessionalListProps {
 export default function ProfessionalList({ professionals }: ProfessionalListProps) {
   return (
     <Wrapper>
+      <BackButton>
+        <Button variant="outline" href="/">
+          ← Voltar
+        </Button>
+      </BackButton>
       <Title>Encontre seu profissional</Title>
       <Subtitle>
         Profissionais verificados e comprometidos com o cuidado inclusivo da comunidade LGBTQIAPN+
