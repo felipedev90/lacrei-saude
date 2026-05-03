@@ -1,13 +1,16 @@
 import Hero from '@/components/home/Hero'
 import Ecosystem from '@/components/home/Ecosystem'
 import CtaBanner from '@/components/ui/CTA'
+import { getProfessionals } from '@/lib/getProfessionals'
 
-export default function Home() {
+export default async function Home() {
+  const professionals = await getProfessionals()
+
   return (
     <>
       <main>
         <Hero />
-        <Ecosystem />
+        <Ecosystem professionals={professionals} />
         <CtaBanner
           title="Saúde inclusiva, em todo o Brasil."
           subtitle="Pronte para um cuidado que respeita quem você é?"
