@@ -22,7 +22,7 @@ const Section = styled.section`
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(1, 55, 37, 0.55);
+  background: ${({ theme }) => theme.colors.overlay.medium};
 `
 
 const Inner = styled.div`
@@ -93,7 +93,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.9);
+  color: ${({ theme }) => theme.colors.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
   max-width: 520px;
   margin-bottom: ${({ theme }) => theme.spacing.lg};

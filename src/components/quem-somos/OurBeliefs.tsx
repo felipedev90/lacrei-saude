@@ -2,11 +2,11 @@
 
 import styled from 'styled-components'
 import { media } from '@/styles/theme'
-import { beliefsData } from '@/data/nossasCrencas'
+import { beliefsData } from '@/data/ourBeliefs'
 import { BeliefCard } from '@/components/ui/BeliefCard'
 
 const Section = styled.section`
-  position: relative; /* FUNDAMENTAL: Prende o overlay dentro desta section */
+  position: relative;
   width: 100%;
   min-height: 40vh;
   display: flex;
@@ -69,15 +69,15 @@ const SectionTitle = styled.h2`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: ${({ theme }) => theme.spacing.md};
 
   ${media.tablet} {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: ${({ theme }) => theme.spacing.lg};
   }
 `
 
-export function NossasCrencas() {
+export function OurBeliefs() {
   return (
     <Section aria-labelledby="crencas-title">
       <CardWideOverlay />

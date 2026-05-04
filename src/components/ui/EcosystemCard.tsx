@@ -1,9 +1,9 @@
 'use client'
 
 import styled from 'styled-components'
-import Link from 'next/link'
 import { media } from '@/styles/theme'
 import { EcosystemCardProps } from '@/types/ecoSystem'
+import CardLink from '@/components/ui/CardLink'
 
 const Card = styled.article`
   background: ${({ theme }) => theme.colors.primaryLight};
@@ -73,30 +73,10 @@ const Text = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
-  margin-bottom: 16px;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 
   ${media.tablet} {
     margin-bottom: 20px;
-  }
-`
-
-const CardLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: ${({ theme }) => theme.fonts.sizes.base};
-  font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme }) => theme.colors.primaryDark};
-  text-decoration: none;
-
-  &::after {
-    content: '→';
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-
-  &:hover::after {
-    transform: translateX(4px);
   }
 `
 

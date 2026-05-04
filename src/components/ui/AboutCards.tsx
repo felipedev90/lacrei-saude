@@ -1,3 +1,4 @@
+'use client'
 import { cardsData } from '@/data/imageCards'
 import Image from 'next/image'
 import styled from 'styled-components'
@@ -30,14 +31,14 @@ const Tag = styled.span`
   ${media.wide} {
     font-size: ${({ theme }) => theme.fonts.sizes.lg};
     border-color: ${({ theme }) => theme.colors.primaryDarker};
-    padding: 6px 16px;
+    padding: 6px ${({ theme }) => theme.spacing.sm};
   }
 `
 
 export const TagsOverlay = styled.div`
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: ${({ theme }) => theme.spacing.sm};
+  left: ${({ theme }) => theme.spacing.sm};
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -51,7 +52,7 @@ export const Highlight = styled.strong`
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
 `
 
-export function QuemSomosCards() {
+export function AboutCards() {
   return (
     <>
       {cardsData.map((card) => (

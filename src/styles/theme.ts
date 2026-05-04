@@ -13,6 +13,13 @@ export const theme = {
     borderLight: '#E0F0EA',
     backgroundLight: '#F8FDFA',
     highlight: '#ffb340',
+    overlay: {
+      dark: 'rgba(1, 55, 37, 0.85)',
+      medium: 'rgba(1, 55, 37, 0.55)',
+      light: 'rgba(1, 55, 37, 0.1)',
+      white: 'rgba(255, 255, 255, 0.7)',
+    },
+    warning: '#f59e0b',
   },
   fonts: {
     family: 'var(--font-nunito), system-ui, sans-serif',
@@ -46,13 +53,13 @@ export const theme = {
     full: '9999px',
   },
   spacing: {
-    xs: '0.5rem',
-    sm: '1rem',
-    md: '1.5rem',
-    lg: '2rem',
-    xl: '3rem',
-    '2xl': '4rem',
-    section: '4rem',
+    xs: '0.5rem', // 8px
+    sm: '1rem', //16px
+    md: '1.5rem', //24px
+    lg: '2rem', //32px
+    xl: '3rem', //48px
+    '2xl': '4rem', //64px
+    section: '4rem', //64px
   },
   breakpoints: {
     mobile: '375px',

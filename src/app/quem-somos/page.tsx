@@ -1,7 +1,7 @@
 import Hero from '@/components/quem-somos/Hero'
-import { ImageCardsGallery } from '@/components/quem-somos/ImageCards'
-import { NossaHistoria } from '@/components/quem-somos/NossaHistoria'
-import { NossasCrencas } from '@/components/quem-somos/NossasCrencas'
+import { ImageGallery } from '@/components/quem-somos/ImageGallery'
+import { OurHistory } from '@/components/quem-somos/OurHistory'
+import { OurBeliefs } from '@/components/quem-somos/OurBeliefs'
 import CtaBanner from '@/components/ui/CTA'
 
 export const metadata = {
@@ -14,10 +14,11 @@ export default function QuemSomosPage() {
   return (
     <main>
       <Hero />
-      <ImageCardsGallery />
-      <NossaHistoria />
-      <NossasCrencas />
+      <ImageGallery />
+      <OurHistory />
+      <OurBeliefs />
       <CtaBanner
+        id="cta-quem-somos"
         title="Faça parte do movimento"
         subtitle="Junte-se a nós e ajude a construir um sistema de saúde mais justo e acolhedor."
         primaryButton={{ label: 'Começar agora', href: '/' }}
