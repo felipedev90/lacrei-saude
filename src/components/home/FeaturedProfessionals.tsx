@@ -9,7 +9,7 @@ import type { Professional } from '@/types/professional'
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: ${({ theme }) => theme.spacing.lg};
   width: 100%;
   margin-top: ${({ theme }) => theme.spacing.sm};
 `

@@ -20,14 +20,14 @@ const Section = styled.section`
   }
 
   ${media.desktop} {
-    min-height: 100vh;
+    min-height: 95vh;
   }
 `
 
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(1, 55, 37, 0.55);
+  background: ${({ theme }) => theme.colors.overlay.medium};
 `
 
 const Inner = styled.div`
@@ -58,7 +58,7 @@ const Eyebrow = styled.span`
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes.sm};
-    margin-bottom: 16px;
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
   }
 `
 
@@ -68,11 +68,11 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.tight};
   max-width: 640px;
-  margin-bottom: 16px;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes['3xl']};
-    margin-bottom: 20px;
+    margin-bottom: ${({ theme }) => theme.spacing.md};
   }
 
   ${media.desktop} {
@@ -82,7 +82,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.9);
+  color: ${({ theme }) => theme.colors.overlay.white};
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
   max-width: 520px;
   margin-bottom: 28px;

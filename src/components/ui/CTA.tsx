@@ -32,9 +32,9 @@ const Overlay = styled.div`
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(1, 55, 37, 0.92) 0%,
-    rgba(1, 55, 37, 0.5) 50%,
-    rgba(1, 55, 37, 0.1) 100%
+    ${({ theme }) => theme.colors.overlay.dark} 0%,
+    ${({ theme }) => theme.colors.overlay.medium} 50%,
+    ${({ theme }) => theme.colors.overlay.light} 100%
   );
 `
 
@@ -69,12 +69,12 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 24px;
+  color: ${({ theme }) => theme.colors.overlay.white};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 
   ${media.tablet} {
     font-size: ${({ theme }) => theme.fonts.sizes.xl};
-    margin-bottom: 32px;
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
   }
 `
 
@@ -90,6 +90,7 @@ const Actions = styled.div`
 `
 
 export default function CtaBanner({
+  id = 'cta-title',
   title,
   subtitle,
   backgroundImage,
@@ -97,10 +98,10 @@ export default function CtaBanner({
   secondaryButton,
 }: CtaBannerProps) {
   return (
-    <Section $bgImage={backgroundImage} aria-labelledby="cta-title">
+    <Section $bgImage={backgroundImage} aria-labelledby={id}>
       <Overlay aria-hidden="true" />
       <Inner>
-        <Title id="cta-title">{title}</Title>
+        <Title id={id}>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
 
         <Actions>

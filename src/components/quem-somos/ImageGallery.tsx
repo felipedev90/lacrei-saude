@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { media } from '@/styles/theme'
-import { QuemSomosCards } from '../ui/QuemSomosCards'
+import { AboutCards } from '../ui/AboutCards'
 
 export const GalleryContainer = styled.section`
   background: ${({ theme }) => theme.colors.borderLight}cc;
@@ -24,10 +24,10 @@ export const GalleryContainer = styled.section`
   }
 `
 
-export function ImageCardsGallery() {
+export function ImageGallery() {
   return (
     <GalleryContainer aria-label="Galeria de imagens da comunidade Lacrei Saúde">
-      <QuemSomosCards />
+      <AboutCards />
     </GalleryContainer>
   )
 }

@@ -11,10 +11,10 @@ const Card = styled.article`
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.borderLight};
   border-radius: ${({ theme }) => theme.radii.xl};
-  padding: 24px;
+  padding: ${({ theme }) => theme.spacing.md};
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${({ theme }) => theme.spacing.sm};
   transition: box-shadow 0.2s;
 
   &:hover {
@@ -25,7 +25,7 @@ const Card = styled.article`
 const Header = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: ${({ theme }) => theme.spacing.sm};
 `
 
 const AvatarWrapper = styled.div`
@@ -58,7 +58,7 @@ const Specialty = styled.span`
 const Badge = styled.span`
   font-size: ${({ theme }) => theme.fonts.sizes.xs};
   font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primaryDark};
   background: ${({ theme }) => theme.colors.primaryLight};
   border-radius: ${({ theme }) => theme.radii.full};
   padding: 2px 10px;
@@ -96,13 +96,13 @@ const Rating = styled.div`
   color: ${({ theme }) => theme.colors.primaryDark};
 
   svg {
-    color: #f59e0b;
+    color: ${({ theme }) => theme.colors.warning};
   }
 `
 
 const Reviews = styled.span`
   font-weight: ${({ theme }) => theme.fonts.weights.regular};
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ theme }) => theme.colors.textPrimary};
 `
 
 interface ProfessionalCardProps {
