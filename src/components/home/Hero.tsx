@@ -120,7 +120,7 @@ export default function Hero() {
           respeitosos — em todo o Brasil.
         </Subtitle>
         <Actions>
-          <Button variant="primary" href="/cadastrar">
+          <Button variant="primary" href="/">
             Criar minha conta
           </Button>
           <Button variant="outline-white" href="/quem-somos">
