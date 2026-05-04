@@ -3,7 +3,6 @@
 import styled from 'styled-components'
 import { media } from '@/styles/theme'
 import Button from '@/components/ui/Button'
-import Image from 'next/image'
 
 const Section = styled.section`
   position: relative;
@@ -112,15 +111,6 @@ const Actions = styled.div`
 export default function Hero() {
   return (
     <Section>
-      <Image
-        src="/images/hero/hero.webp"
-        alt=""
-        fill
-        priority
-        fetchPriority="high"
-        style={{ objectFit: 'cover', zIndex: 0, opacity: 0 }}
-        aria-hidden
-      />
       <Overlay aria-hidden="true" />
       <Inner>
         <Eyebrow>Plataforma de saúde inclusiva</Eyebrow>
