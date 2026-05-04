@@ -15,16 +15,16 @@ export const cardsData: CardType[] = [
   {
     id: '2',
     src: '/images/quem-somos/imageCards/amor.webp',
-    alt: 'Médica e paciente conversando de forma acolhedora',
+    alt: 'Grupo de pessoas diversas sorrindo e se abraçando',
   },
   {
     id: '3',
     src: '/images/quem-somos/imageCards/mulher-trans.webp',
-    alt: 'Duas mulheres conversando em um ambiente claro',
+    alt: 'Mulher trans sorrindo e olhando para a câmera, com a bandeira trans ao fundo',
   },
   {
     id: '4',
     src: '/images/quem-somos/imageCards/amizade.webp',
-    alt: 'Grupo de pessoas diversas sorrindo',
+    alt: 'Duas pessoas felizes e orgulhosas, segurando a bandeira do orgulho LGBTQIAPN+',
   },
 ]
