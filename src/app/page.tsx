@@ -1,14 +1,23 @@
 import Hero from '@/components/home/Hero'
 import Ecosystem from '@/components/home/Ecosystem'
-import CtaBanner from '@/components/home/CtaBanner'
+import CtaBanner from '@/components/ui/CTA'
+import { getProfessionals } from '@/lib/getProfessionals'
 
-export default function Home() {
+export default async function Home() {
+  const professionals = await getProfessionals()
+
   return (
     <>
       <main>
         <Hero />
-        <Ecosystem />
-        <CtaBanner />
+        <Ecosystem professionals={professionals} />
+        <CtaBanner
+          title="Saúde inclusiva, em todo o Brasil."
+          subtitle="Pronte para um cuidado que respeita quem você é?"
+          backgroundImage="/images/cta/cta-banner.webp"
+          primaryButton={{ label: 'Criar minha conta', href: '/cadastrar' }}
+          secondaryButton={{ label: 'Conheça a Lacrei', href: '/quem-somos' }}
+        />
       </main>
     </>
   )

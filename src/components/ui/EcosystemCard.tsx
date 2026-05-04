@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 import Link from 'next/link'
 import { media } from '@/styles/theme'
+import { EcosystemCardProps } from '@/types/ecoSystem'
 
 const Card = styled.article`
   background: ${({ theme }) => theme.colors.primaryLight};
@@ -98,17 +99,6 @@ const CardLink = styled(Link)`
     transform: translateX(4px);
   }
 `
-
-interface EcosystemCardProps {
-  label?: string
-  title: string
-  text: string
-  linkLabel: string
-  href: string
-  imageSrc: string
-  imageAlt?: string
-  imagePosition?: string
-}
 
 export default function EcosystemCard({
   label = 'Lacrei',

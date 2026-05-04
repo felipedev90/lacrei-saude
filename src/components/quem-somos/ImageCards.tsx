@@ -5,6 +5,7 @@ import { media } from '@/styles/theme'
 import { QuemSomosCards } from '../ui/QuemSomosCards'
 
 export const GalleryContainer = styled.section`
+  background: ${({ theme }) => theme.colors.borderLight}cc;
   display: flex;
   gap: ${({ theme }) => theme.spacing.sm};
   overflow-x: auto;

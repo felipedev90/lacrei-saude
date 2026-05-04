@@ -22,7 +22,7 @@ const Grid = styled.div`
 
   ${media.desktop} {
     grid-template-columns: 1fr 1.2fr;
-    gap: ${({ theme }) => theme.spacing.sm};
+    gap: ${({ theme }) => theme.spacing.xl};
   }
 `
 

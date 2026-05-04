@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { media } from '@/styles/theme'
 import EcosystemCard from '@/components/ui/EcosystemCard'
 import { BadgeCheck, Heart, Users, ShieldCheck } from 'lucide-react'
+import { FeaturedProfessionals } from './FeaturedProfessionals'
+import type { Professional } from '@/types/professional'
 
 const Section = styled.section`
   background: linear-gradient(
@@ -58,6 +60,7 @@ const Tags = styled.div`
 const Tag = styled.span`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: ${({ theme }) => theme.fonts.sizes.sm};
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
@@ -70,30 +73,6 @@ const Tag = styled.span`
     font-size: ${({ theme }) => theme.fonts.sizes.lg};
     border-color: rgba(255, 255, 255, 0.4);
     padding: 6px 16px;
-  }
-`
-
-const TagDot = styled.span<{ $color: string }>`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: ${({ $color }) => $color};
-  flex-shrink: 0;
-`
-
-const BottomTags = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 0 24px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-
-  ${media.desktop} {
-    padding: 0;
-    gap: 12px;
-    margin-top: 40px;
   }
 `
 
@@ -238,7 +217,11 @@ const CardLink = styled(Link)<{ $dark?: boolean }>`
   }
 `
 
-export default function Ecosystem() {
+type EcosystemProps = {
+  professionals: Professional[]
+}
+
+export default function Ecosystem({ professionals }: EcosystemProps) {
   return (
     <Section aria-labelledby="ecosystem-title">
       <Inner>
@@ -247,19 +230,19 @@ export default function Ecosystem() {
         </SectionTitle>
         <Tags>
           <Tag>
-            <BadgeCheck size={14} />
+            <BadgeCheck size={18} />
             Profissionais verificados
           </Tag>
           <Tag>
-            <Heart size={14} />
+            <Heart size={18} />
             Atendimento ético
           </Tag>
           <Tag>
-            <Users size={14} />
+            <Users size={18} />
             Comunidade ativa
           </Tag>
           <Tag>
-            <ShieldCheck size={14} />
+            <ShieldCheck size={18} />
             Cuidado integral
           </Tag>
         </Tags>
@@ -279,7 +262,7 @@ export default function Ecosystem() {
             title="AGENDE"
             text="Marque consultas presenciais ou online em poucos cliques. Atendimento humanizado, ético e seguro — feito com a comunidade."
             linkLabel="Saiba mais"
-            href="/agendar"
+            href="/buscar"
             imageSrc="/images/ecosystem/agende.webp"
             imageAlt="Profissionais de saúde da Lacrei"
             imagePosition="15% "
@@ -297,7 +280,7 @@ export default function Ecosystem() {
                   clínicas.
                 </CardTextWhite>
               </div>
-              <CardLink href="/capacitacao" $dark>
+              <CardLink href="/" $dark>
                 Capacite-se
               </CardLink>
             </CardWideContent>
@@ -309,30 +292,16 @@ export default function Ecosystem() {
               <CardTitle>PROTEJA</CardTitle>
             </div>
             <CardSmallText>
-              Privacidade, dignidade e atendimento livre de discriminação — sua segurança é nossa
+              Privacidade, dignidade e atendimento livre de discriminação - sua segurança é nossa
               prioridade em cada interação.
             </CardSmallText>
-            <CardLink href="/seguranca">Saiba mais</CardLink>
+            <CardLink href="/">Saiba mais</CardLink>
           </CardSmall>
         </Grid>
-        <BottomTags>
-          <Tag>
-            <TagDot $color="#018762" />
-            APOIO
-          </Tag>
-          <Tag>
-            <TagDot $color="#018762" />
-            SAÚDE +
-          </Tag>
-          <Tag>
-            <TagDot $color="#018762" />
-            PRIDE HEALTH
-          </Tag>
-          <Tag>
-            <TagDot $color="#018762" />
-            OPEN CARE
-          </Tag>
-        </BottomTags>
+        <SectionTitle id="featured-professionals-title" style={{ marginTop: '2rem' }}>
+          Profissionais em destaque na Lacrei
+        </SectionTitle>
+        <FeaturedProfessionals professionals={professionals} />
       </Inner>
     </Section>
   )
