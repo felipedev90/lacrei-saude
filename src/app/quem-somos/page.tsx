@@ -3,11 +3,17 @@ import { ImageGallery } from '@/components/quem-somos/ImageGallery'
 import { OurHistory } from '@/components/quem-somos/OurHistory'
 import { OurBeliefs } from '@/components/quem-somos/OurBeliefs'
 import CtaBanner from '@/components/ui/CTA'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Quem Somos | Lacrei Saúde',
+export const metadata: Metadata = {
+  title: 'Quem Somos',
   description:
-    'Saiba mais sobre a missão, visão e valores da Lacrei Saúde, promovendo um sistema de saúde inclusivo para a comunidade LGBTQIAPN+',
+    'Conheça a história, missão e valores da Lacrei Saúde — plataforma criada para garantir saúde inclusiva para a comunidade LGBTQIAPN+.',
+  openGraph: {
+    title: 'Quem Somos | Lacrei Saúde',
+    description: 'Conheça a história, missão e valores da Lacrei Saúde.',
+    url: '/quem-somos',
+  },
 }
 
 export default function QuemSomosPage() {

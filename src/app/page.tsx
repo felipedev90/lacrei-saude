@@ -16,7 +16,7 @@ export default async function Home() {
           title="Saúde inclusiva, em todo o Brasil."
           subtitle="Pronte para um cuidado que respeita quem você é?"
           backgroundImage="/images/CTA/cta-banner.webp"
-          primaryButton={{ label: 'Criar minha conta', href: '/cadastrar' }}
+          primaryButton={{ label: 'Criar minha conta', href: '/' }}
           secondaryButton={{ label: 'Conheça a Lacrei', href: '/quem-somos' }}
         />
       </main>

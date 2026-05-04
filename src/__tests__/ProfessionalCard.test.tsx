@@ -65,7 +65,7 @@ describe('ProfessionalCard', () => {
   it('renderiza o link de ver perfil com href correto', () => {
     renderWithTheme(<ProfessionalCard professional={mockProfessional} />)
     const link = screen.getByRole('link', { name: 'Ver perfil' })
-    expect(link).toHaveAttribute('href', '/profissional/1')
+    expect(link).toHaveAttribute('href', '/buscar')
   })
 
   it('renderiza o avatar com alt correto', () => {
