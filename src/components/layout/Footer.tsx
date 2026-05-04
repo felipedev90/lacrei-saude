@@ -224,8 +224,8 @@ export default function Footer() {
               <ColumnTitle>Navegação</ColumnTitle>
               <FooterLink href="/">Início</FooterLink>
               <FooterLink href="/quem-somos">Quem Somos</FooterLink>
-              <FooterLink href="/profissionais">Profissionais</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
+              <FooterLink href="/buscar">Profissionais</FooterLink>
+              <FooterLink href="/">Blog</FooterLink>
             </Column>
 
             <Column>
@@ -236,7 +236,7 @@ export default function Footer() {
               <BottomText style={{ color: 'rgba(255,255,255,0.7)' }}>
                 São Paulo, SP — Brasil
               </BottomText>
-              <FooterLink href="/privacidade">Política de privacidade</FooterLink>
+              <FooterLink href="/">Política de privacidade</FooterLink>
             </Column>
           </Columns>
         </Top>

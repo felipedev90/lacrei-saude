@@ -170,10 +170,10 @@ export default function Header() {
         <MobileNavLink href="/quem-somos" $active={pathname === '/quem-somos'}>
           Quem Somos
         </MobileNavLink>
-        <Button variant="outline" href="/entrar">
+        <Button variant="outline" href="/">
           Entrar
         </Button>
-        <Button variant="primary" href="/cadastrar">
+        <Button variant="primary" href="/">
           Cadastrar
         </Button>
       </MobileMenu>

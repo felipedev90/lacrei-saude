@@ -149,7 +149,7 @@ export default function ProfessionalCard({ professional }: ProfessionalCardProps
         <Reviews>({professional.reviews} avaliações)</Reviews>
       </Rating>
 
-      <Button variant="primary" href={`/profissional/${professional.id}`}>
+      <Button variant="primary" href="/buscar">
         Ver perfil
       </Button>
     </Card>
