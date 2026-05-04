@@ -298,6 +298,9 @@ export default function Ecosystem({ professionals }: EcosystemProps) {
             <CardLink href="/">Saiba mais</CardLink>
           </CardSmall>
         </Grid>
+        <SectionTitle id="featured-professionals-title" style={{ marginTop: '2rem' }}>
+          Profissionais em destaque na Lacrei
+        </SectionTitle>
         <FeaturedProfessionals professionals={professionals} />
       </Inner>
     </Section>
