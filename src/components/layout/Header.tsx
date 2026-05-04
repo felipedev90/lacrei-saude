@@ -105,6 +105,7 @@ const DesktopActions = styled.div`
 const NavLink = styled(Link)<{ $active: boolean }>`
   font-size: ${({ theme }) => theme.fonts.sizes.base};
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
+  text-align: center;
   color: ${({ theme, $active }) => ($active ? theme.colors.primary : theme.colors.textPrimary)};
   border-bottom: 2px solid
     ${({ theme, $active }) => ($active ? theme.colors.primary : 'transparent')};

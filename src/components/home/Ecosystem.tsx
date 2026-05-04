@@ -71,7 +71,7 @@ const Tag = styled.span`
 
   ${media.desktop} {
     font-size: ${({ theme }) => theme.fonts.sizes.lg};
-    border-color: ${({ theme }) => theme.colors.overlay.light};
+    border-color: ${({ theme }) => theme.colors.overlay.white};
     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.overlay.light};
     padding: 6px ${({ theme }) => theme.spacing.sm};
   }
@@ -145,7 +145,7 @@ const CardSmall = styled.article`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: ${({ theme }) => theme.spacing.sm};
     grid-column: 1 / -1;
     padding: 20px 28px;
   }
@@ -185,16 +185,22 @@ const CardText = styled.p`
 
 const CardTextWhite = styled(CardText)`
   color: ${({ theme }) => theme.colors.overlay.white};
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `
 
 const CardSmallText = styled.p`
-  font-size: ${({ theme }) => theme.fonts.sizes.sm};
+  font-size: ${({ theme }) => theme.fonts.sizes.base};
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: ${({ theme }) => theme.fonts.lineHeights.relaxed};
 
   ${media.desktop} {
     flex: 1;
+    text-align: center;
+    font-size: ${({ theme }) => theme.fonts.sizes.sm};
+  }
+
+  ${media.wide} {
+    font-size: ${({ theme }) => theme.fonts.sizes.base};
   }
 `
 
