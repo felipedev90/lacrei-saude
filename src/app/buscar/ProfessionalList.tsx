@@ -59,6 +59,12 @@ interface ProfessionalListProps {
   professionals: Professional[]
 }
 
+export const metadata = {
+  title: 'Buscar Profissionais | Lacrei Saúde',
+  description:
+    'Encontre profissionais verificados e comprometidos com o cuidado inclusivo da comunidade LGBTQIAPN+',
+}
+
 export default function ProfessionalList({ professionals }: ProfessionalListProps) {
   return (
     <Wrapper>

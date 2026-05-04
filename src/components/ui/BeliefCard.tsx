@@ -8,7 +8,7 @@ const CardWrapper = styled.div<{ $isFeatured?: boolean }>`
   position: relative;
   background: transparent;
   border-radius: 24px;
-  padding: 32px;
+  padding: ${({ theme }) => theme.spacing.lg};
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -56,7 +56,7 @@ const Title = styled.h3`
   font-size: ${({ theme }) => theme.fonts.sizes.xl};
   color: ${({ theme }) => theme.colors.primaryDark};
   font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  margin-bottom: 8px;
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
 `
 
 const Description = styled.p`

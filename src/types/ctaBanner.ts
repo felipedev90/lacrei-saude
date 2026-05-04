@@ -1,4 +1,5 @@
 export type CtaBannerProps = {
+  id?: string
   title: string
   subtitle: string
   backgroundImage?: string

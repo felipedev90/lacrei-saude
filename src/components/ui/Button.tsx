@@ -5,7 +5,7 @@ const baseStyles = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: ${({ theme }) => theme.spacing.xs};
   font-family: ${({ theme }) => theme.fonts.family};
   font-size: ${({ theme }) => theme.fonts.sizes.base};
   font-weight: ${({ theme }) => theme.fonts.weights.bold};

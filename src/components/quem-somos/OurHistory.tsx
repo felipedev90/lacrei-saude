@@ -124,7 +124,7 @@ const MetricLabel = styled.span`
   font-weight: ${({ theme }) => theme.fonts.weights.semibold};
 `
 
-export function NossaHistoria() {
+export function OurHistory() {
   return (
     <Container aria-labelledby="historia-title">
       <Grid>

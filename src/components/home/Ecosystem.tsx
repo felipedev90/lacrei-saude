@@ -1,12 +1,12 @@
 'use client'
 
 import styled from 'styled-components'
-import Link from 'next/link'
 import { media } from '@/styles/theme'
 import EcosystemCard from '@/components/ui/EcosystemCard'
 import { BadgeCheck, Heart, Users, ShieldCheck } from 'lucide-react'
 import { FeaturedProfessionals } from './FeaturedProfessionals'
 import type { Professional } from '@/types/professional'
+import CardLink from '@/components/ui/CardLink'
 
 const Section = styled.section`
   background: linear-gradient(
@@ -71,8 +71,9 @@ const Tag = styled.span`
 
   ${media.desktop} {
     font-size: ${({ theme }) => theme.fonts.sizes.lg};
-    border-color: rgba(255, 255, 255, 0.4);
-    padding: 6px 16px;
+    border-color: ${({ theme }) => theme.colors.overlay.light};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.overlay.light};
+    padding: 6px ${({ theme }) => theme.spacing.sm};
   }
 `
 
@@ -84,7 +85,7 @@ const Grid = styled.div`
   ${media.desktop} {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: ${({ theme }) => theme.spacing.sm};
   }
 `
 
@@ -110,16 +111,16 @@ const CardWideOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(1, 55, 37, 0.85) 0%,
-    rgba(1, 55, 37, 0.5) 50%,
-    rgba(1, 55, 37, 0.05) 100%
+    ${({ theme }) => theme.colors.overlay.dark} 0%,
+    ${({ theme }) => theme.colors.overlay.medium} 50%,
+    ${({ theme }) => theme.colors.overlay.light} 100%
   );
 `
 
 const CardWideContent = styled.div`
   position: relative;
   z-index: 1;
-  padding: 24px;
+  padding: ${({ theme }) => theme.spacing.md};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -183,7 +184,7 @@ const CardText = styled.p`
 `
 
 const CardTextWhite = styled(CardText)`
-  color: rgba(255, 255, 255, 0.85);
+  color: ${({ theme }) => theme.colors.overlay.white};
   margin-bottom: 20px;
 `
 
@@ -194,26 +195,6 @@ const CardSmallText = styled.p`
 
   ${media.desktop} {
     flex: 1;
-  }
-`
-
-const CardLink = styled(Link)<{ $dark?: boolean }>`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: ${({ theme }) => theme.fonts.sizes.base};
-  font-weight: ${({ theme }) => theme.fonts.weights.bold};
-  color: ${({ theme, $dark }) => ($dark ? theme.colors.white : theme.colors.primaryDark)};
-  text-decoration: none;
-
-  &::after {
-    content: '→';
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-
-  &:hover::after {
-    transform: translateX(4px);
   }
 `
 

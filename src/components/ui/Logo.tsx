@@ -17,7 +17,14 @@ interface LogoProps {
 export default function Logo({ href = '/', width = 140, height = 40 }: LogoProps) {
   return (
     <Brand href={href} aria-label="Lacrei Saúde - página inicial">
-      <Image src="/images/logo.png" alt="Lacrei Saúde" width={width} height={height} priority />
+      <Image
+        src="/images/logo.png"
+        alt="Lacrei Saúde"
+        width={width}
+        height={height}
+        priority
+        sizes="(max-width: 1024px) 130px, 200px"
+      />
     </Brand>
   )
 }
